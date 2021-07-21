@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+# If issues installing, run: export SYSTEM_VERSION_COMPAT=1
+# https://github.com/pypa/pipenv/issues/4576#issuecomment-751639556
+
+[packages]
+numpy = "1.20.3"
+pandas = "1.2.4"
+scikit-learn = "0.24.2"
+matplotlib = "3.4.2"
+seaborn = "0.11.1"
+flask = "2.0.1"
+spacy = "3.0.6"
+beautifulsoup4 = "4.9.0"
+lxml = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
