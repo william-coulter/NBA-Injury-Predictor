@@ -22,10 +22,10 @@ from bs4 import BeautifulSoup
 
 #--------------------------User Inputs -----------------------
 #save path for csv files
-savepath_csv='../data/raw/'
+savepath_csv='./data/raw/'
 
 #seasons schedules to scrape
-season_list = ['2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020', '2021']
+season_list = ['2019','2020','2021']
 
 #NBA teams to scrape (this dictionary is valid (complete) for 2009-2021 seasons)
 team_dict = {
@@ -66,12 +66,12 @@ team_dict = {
 
 #teams that moved or otherwise had a name change - need to handle these teams separately (this dictionary is valid for 2009-2021)
 teams_relocate_rename_dict = {
-    'BRK': ['2013', '2014', '2015', '2016', '2017', '2018', '2019','2020'],
-    'CHA': ['2010', '2011', '2012', '2013','2014'],
-    'CHO': ['2015', '2016', '2017', '2018', '2019','2020'],
-    'NJN': ['2010', '2011', '2012'],
-    'NOH': ['2010','2011','2012','2013'],
-    'NOP': ['2014', '2015', '2016', '2017', '2018', '2019','2020'],
+    'BRK': ['2019','2020','2021'],
+    'CHA': [],
+    'CHO': ['2019','2020','2021'],
+    'NJN': [],
+    'NOH': [],
+    'NOP': ['2019','2020','2021'],
 }
 #---------------------Define Functions-----------------------
 

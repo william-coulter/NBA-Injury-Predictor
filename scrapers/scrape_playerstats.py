@@ -17,10 +17,10 @@ from bs4 import BeautifulSoup
 
 ### -------------------------User Inputs ------------------------------------
 #save path and output filename
-savepath='../data/raw/'
+savepath='./data/raw/'
 
 # NBA seasons we will be analyzing
-year_list = list(range(1994,2021))
+year_list = list(range(2019,2022))
 
 #--------------------------Define Functions----------------------------------
 

@@ -18,12 +18,12 @@ from bs4 import BeautifulSoup
 
 #------- User Inputs -----------------------
 #save path and output filename
-savepath='../data/raw/'
-filename = 'prosportstransactions_scrape_inactivelist_2010_2021.csv'
+savepath='./data/raw/'
+filename = 'prosportstransactions_scrape_inactivelist_2019-2021.csv'
 
 
 #URL to scrape from
-url = "https://www.prosportstransactions.com/basketball/Search/SearchResults.php?Player=&Team=&BeginDate=2010-07-01&EndDate=2021-07-21&ILChkBx=yes&Submit=Search"
+url = "https://www.prosportstransactions.com/basketball/Search/SearchResults.php?Player=&Team=&BeginDate=2019-07-06&EndDate=2021-07-21&ILChkBx=yes&Submit=Search"
 #Note that only the first subset of results is shown on this webpage. The remainder of the data is broken out into a number of web pages that are linked at the bottom. 
 
 #-------------Scrape web page----------------------------
