@@ -52,21 +52,22 @@ It might be shocking to hear that Bowie was drafted one place \emph{above} the h
 This was because the Trail Blazers needed a new superstar "big man" to replace the Center they lossed the season before.
 Bowie had an impressive 76 games with the Trail Blazers until a fracture in his left tibia put him out for the season.
 Even though Bowie followed the recommened recovery time, the rest of Bowie's career was undermined by the recurring injury.
-In 10 seasons with the NBA, Bowie only appears in 511 games.\\
+In 10 seasons with the NBA, Bowie only appeared in 511 games.\\
 
-The question is, even though injuries in sport and in the NBA can seem random, can a
-machine learning model be used to eliminate some of the unpredictability and determine the likelihood 
-that a player will suffer a major injury in the current season?
+The question is, even though injuries in sport are seen as an unforeseeable tragedy, can a
+machine learning model be used to eliminate some of the unpredictability and quantify 
+the likelihood that a player will suffer a major injury in the current season?
 
 \section*{The Goal}
 
 Create a model that assigns a likelihood that a player will \emph{suffer a major injury}
-given their current performance. Suffering a major injury can be defined as a physical 
-injury that leaves the player missing 15 or more games.
+given their current performance. Suffering a major injury will be defined as a physical 
+injury that leaves the player injured for more than 60 days. % TODO: Calibrate 60
 
-% TODO: A background on similar projects / how this project is unique?
 
 \newpage
+
+% TODO: A background on similar projects / how this project is unique?
 
 \section*{The Data}
 
@@ -97,8 +98,13 @@ still worked just fine.\\
 
 For cleaning, all that I had to do was append the latest scraped data
 with the existing datasets. The cleaned datasets can be viewed at \textbf{data/cleaned}.
+The code used to execute this is stored at \textbf{scripts/clean\_data.py}.
 
 \section*{Processing Data}
+
+This section explains the reasoning and steps take to produce the \textbf{data/processed/processed\_injuries.csv}
+file and what each of the columns mean. The code used to execute this is stored at 
+\textbf{scipts/process\_data.py}.
 
 \subsection*{The Injury List}
 
@@ -107,10 +113,24 @@ of players who are currently suffering from physical injury, players who miss ga
 for other reasons can be placed on this list. Other reasons include:
 
 \begin{itemize}
-    \item \textbf{illness}: TODO: obtain number of entries that satisfy this criteria.
-    \item \textbf{COVID-19}
-    \item \textbf{personal reasons}: e.g birth of child.
+    \item \textbf{illness}: 413
+    \item \textbf{surgery}: 253
+    \item \textbf{COVID-19}: 11
+    \item \textbf{personal reasons}: 11
 \end{itemize}
+
+In addition, the list includes players who are \emph{relinquished} from their team 
+(put on the injury list) and players who are \emph{acquired} to their team (removed
+from the injury list). This means there are essentially 2 entries for 
+each individual injury. We want to move the date of this second entry to its own column
+so that for each injury we know the dates that player was put on and removed from the 
+injury list.
+
+Once all of the acquired and non-injury related entries has been removed,
+there is a total of \textbf{8552} entries. This means we have 8552
+physical injuries in the NBA since 2010 to train a model off of - not bad.
+
+The processed injury list dataset is stored at \textbf{./data/processed/physical\_injuries\_2010\_2021.csv}.
 
 TODO: Make a new dataset from this (injury\_list\_cleaned)
 
