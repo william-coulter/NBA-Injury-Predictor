@@ -159,25 +159,27 @@ Now that we have 1,711 examples where a player were acquired on the injury list
 for longer than 34 days, we want to tell a bigger story with these entries by attaching
 more data to these injuries. The case of Bowie can inspire us to ask questions such as:
 
-\begin{enumerate}
+\begin{itemize}
     \item How was the player performing before this injury?
     \item What was their average gametime?
     \item How intense did the player play?
     \item How intense was their team's schedule?
-    \item Had they suffered a minor injury prior?
-    \item Had they suffered a major injury prior?
-\end{enumerate} 
+    \item Have they suffered an injury prior?
+\end{itemize} 
+
+The script \textbf{scripts/derive\_new\_fields.py} attempts to answer some of these questions
+by joining the existing dataset at \textbf{data/cleaned/player\_stats\_2010\_2021.csv}
+with the processed injury list at \textbf{data/processed/physical\_injuries\_2010\_2021.csv}.
 
 
 
-
-\subsection*{Correlated fields}
 
 
 
 \newpage
 \section*{Exploratory Analysis}
 
+\subsection*{Correlated fields}
 
 
 \section*{Model Selection}

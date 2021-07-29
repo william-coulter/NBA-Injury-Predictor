@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1627538339 "/Users/williamcoulter/Documents/COMP9417/project/latex/main.tex" "/Users/williamcoulter/Documents/COMP9417/project/latex/main.pdf" "main" 1627538997
-  "../outputs//day_spent_on_il_distribution.png" 1627538997 17271 71f3b4b81bcd11ec1d0756d964fb5605 ""
-  "/Users/williamcoulter/Documents/COMP9417/project/latex/main.aux" 1627538341 758 e12ca4a1ed037cbbf193a64726eebab4 ""
-  "/Users/williamcoulter/Documents/COMP9417/project/latex/main.tex" 1627538339 8223 5c4a98da2ca80d93d60f8678611493c4 ""
+["pdflatex"] 1627539521 "/Users/williamcoulter/Documents/COMP9417/project/latex/main.tex" "/Users/williamcoulter/Documents/COMP9417/project/latex/main.pdf" "main" 1627544488
+  "../outputs//day_spent_on_il_distribution.png" 1627544488 17271 71f3b4b81bcd11ec1d0756d964fb5605 ""
+  "/Users/williamcoulter/Documents/COMP9417/project/latex/main.aux" 1627539523 758 e12ca4a1ed037cbbf193a64726eebab4 ""
+  "/Users/williamcoulter/Documents/COMP9417/project/latex/main.tex" 1627539521 8440 c916eb8a7e84c6db3504ef934295caee ""
   "/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/xcharter/xch1_co4ru4.enc" 1606428162 4020 815abc1c059da36cce40360945aea216 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/xcharter/xch_rydp4l.enc" 1606428162 3148 bd2d2f64284824eccbbb6aa07b7feccd ""
   "/usr/local/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -209,14 +209,14 @@
   "/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1616695603 5169178 a2ce6e2d73f603b690db6777d06dbccb ""
   "/usr/local/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1623306823 2724737 423ef2897c247626680bf84ef774a99f ""
   "/usr/local/texlive/2021/texmf.cnf" 1616695596 577 4c1911a7228e554c6032256d3cf5567d ""
-  "main.aux" 1627538341 758 e12ca4a1ed037cbbf193a64726eebab4 "pdflatex"
-  "main.out" 1627538340 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.tex" 1627538339 8223 5c4a98da2ca80d93d60f8678611493c4 ""
+  "main.aux" 1627539523 758 e12ca4a1ed037cbbf193a64726eebab4 "pdflatex"
+  "main.out" 1627539523 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.tex" 1627539521 8440 c916eb8a7e84c6db3504ef934295caee ""
   "structure.tex" 1627113794 6656 2958400c74cc08579d8f53526352bd46 ""
   (generated)
-  "main.pdf"
+  "/Users/williamcoulter/Documents/COMP9417/project/latex/main.pdf"
   "main.out"
   "main.log"
-  "/Users/williamcoulter/Documents/COMP9417/project/latex/main.pdf"
   "main.aux"
   "/Users/williamcoulter/Documents/COMP9417/project/latex/main.log"
+  "main.pdf"
