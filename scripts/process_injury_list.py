@@ -1,5 +1,9 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
 import math
+from datetime import datetime
 
 def import_csv(path):
     return pd.read_csv(path, index_col=0)
@@ -8,15 +12,14 @@ def is_acquired_entry(row):
     # Empty entries import as "NaN" which is of type float
     return isinstance(row["Relinquished"], float)
 
-print("\n\nProcessing data...\n\n")
-
-### INJURY LIST ###
+print("\n\nProcessing injury list...\n\n")
 
 # Import cleaned IL
 full_IL = import_csv("./data/cleaned/injury_list_2010_2021.csv")
 
 # For each "relinquished" entry, find the corresponding "acquired"
 # entry and add this to the empty "Acquired" column
+print("Fixing 'Acquired' column, this may take a while...")
 for i, row in full_IL.iterrows():
     # Skip row if its an "acquired" entry
     if is_acquired_entry(row):
@@ -28,31 +31,28 @@ for i, row in full_IL.iterrows():
     # Flag to track whether the return date was found
     found = False
     for i2, row2 in full_IL[i+1:].iterrows():   
+        if found == True:
+            break
 
         # Assume that no players have the same name
-        if row2["Relinquished"] == player:
+        if row2["Acquired"] == player or row2["Relinquished"] == player:
 
             if is_acquired_entry(row2):
                 # This entry contains when the player returned from their injury
-                row["Acquired"] = row2["Date"]
-                print(row)
+                full_IL.at[i, "Acquired"] = row2["Date"]
                 found = True
 
             else:
-                # STARTHERE: Always entering here
-
                 # This entry is ANOTHER injury which means they were out
                 # for the season due to their last injury
                 #
-                # Let's mark this injury until the end of the year
-                row["Acquired"] = f"{row2['Date'][0:4]}-12-31"
-                print("BOOM")
+                # Let's mark this injury as season
+                full_IL.at[i, "Acquired"] = "season"
                 found = True
 
     # If the return date was not found, then the player has not returned
-    # Let's mark this injury until the end of the year
-    row["Acquired"] = f"{row2['Date'][0:4]}-12-31"
-
+    if found == False:
+        full_IL.at[i, "Acquired"] = "season"
 
 # Filter entries regarding when a player left the IL
 il_relinquished = full_IL.dropna(subset=["Relinquished"])
@@ -75,6 +75,33 @@ print(f"Remaining injury related entries: {il_injuries.shape[0]}")
 
 il_injuries.to_csv("./data/processed/physical_injuries_2010_2021.csv")
 
-print(il_injuries.head())
+# Calculate days that injury left player on injury list
+il_injuries = import_csv("./data/processed/physical_injuries_2010_2021.csv")
 
-### ADD NEW FIELDS ###
+def calculate_days_on_il(row, season_val):
+    # For the histogram, don't include injuries where a player was out for
+    # the season. These will automatically count as a major injury.
+    if row["Acquired"] == "season":
+        return season_val
+    else:
+        start = datetime.strptime(row["Date"], "%Y-%m-%d")
+        end = datetime.strptime(row["Acquired"], "%Y-%m-%d")
+        return (end - start).days
+
+for i, row in il_injuries.iterrows():
+    il_injuries.at[i, "Duration"] = calculate_days_on_il(row, 100)
+
+# Save dataframe
+il_injuries.to_csv("./data/processed/physical_injuries_2010_2021.csv")
+
+# Plot distribution
+days_data = il_injuries["Duration"]
+percentile_80 = np.percentile(days_data, 80)
+print(f"80th percentile of injuries: {percentile_80}")
+
+# Arbitarily set range between 0 and 75 to filter out outliers
+plt.hist(days_data, bins="auto", range=(0,75))
+plt.gca().set(title="Days Spent on IL Distribution", ylabel='Frequency')
+plt.axvline(x=percentile_80, color="red")
+
+plt.savefig("./outputs/day_spent_on_il_distribution.png")

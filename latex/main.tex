@@ -33,6 +33,7 @@
 
 \date{University of New South Wales --- \today} % University, school and/or department name(s) and a date
 
+\newcommand{\injurydef}{a physical injury that leaves a player on the injury list for more than 34 days}
 %----------------------------------------------------------------------------------------
 
 \begin{document}
@@ -61,9 +62,7 @@ the likelihood that a player will suffer a major injury in the current season?
 \section*{The Goal}
 
 Create a model that assigns a likelihood that a player will \emph{suffer a major injury}
-given their current performance. Suffering a major injury will be defined as a physical 
-injury that leaves the player injured for more than 60 days. % TODO: Calibrate 60
-
+given their current performance. Suffering a major injury will be defined \injurydef.
 
 \newpage
 
@@ -102,11 +101,15 @@ The code used to execute this is stored at \textbf{scripts/clean\_data.py}.
 
 \section*{Processing Data}
 
-This section explains the reasoning and steps take to produce the \textbf{data/processed/processed\_injuries.csv}
-file and what each of the columns mean. The code used to execute this is stored at 
-\textbf{scipts/process\_data.py}.
+% This section explains the reasoning and steps take to produce the \textbf{data/processed/physical\_injuries.csv}
+% file and what each of the columns mean. The code used to execute this is stored at 
+% \textbf{scipts/process\_data.py}.
 
 \subsection*{The Injury List}
+
+This section explains the reasoning and steps take to produce the \textbf{data/processed/physical\_injuries\_2010\_2021.csv}
+file and what each of the columns mean. The code used to execute this is stored at 
+\textbf{scipts/process\_injury\_list.py}.\\
 
 The injury list in the NBA isn't quite as the name suggests. Rather than being a list
 of players who are currently suffering from physical injury, players who miss games
@@ -124,35 +127,42 @@ In addition, the list includes players who are \emph{relinquished} from their te
 from the injury list). This means there are essentially 2 entries for 
 each individual injury. We want to move the date of this second entry to its own column
 so that for each injury we know the dates that player was put on and removed from the 
-injury list.
+injury list.\\
 
-Once all of the acquired and non-injury related entries has been removed,
-there is a total of \textbf{8552} entries. This means we have 8552
-physical injuries in the NBA since 2010 to train a model off of - not bad.
+Earlier I defined a "major injury" as \injurydef. I defined it in this way
+by looking at the distribution of days spent on the injury list in our dataset.
 
-The processed injury list dataset is stored at \textbf{./data/processed/physical\_injuries\_2010\_2021.csv}.
+\begin{center}
+    \includegraphics[scale=0.6]{day_spent_on_il_distribution.png}    
+\end{center}
 
-TODO: Make a new dataset from this (injury\_list\_cleaned)
+The red line shows the 80th percentile of this distribution which is at 
+\textbf{34} days spent on the injury list
+\footnote{Some injuries were marked as "player out for season" which means they don't have another entry in the 
+dataset showing their return. For this case, the player was marked down as being on the IL for 100 days. These players
+are not included in the histogram however do play a role in this percentile calculation}.
+I selected this to be the boundary between a minor and major. Even though this was done somewhat 
+arbitarily (I manually decided to use the 80th percentile), I believe this is a
+reasonable number since it represents the injuries that left a player on the injury 
+list for just over a month and represents only 20\% of all NBA injuries since 2010.\\
 
-For this project, I have defined a "major injury" as a physical injury that 
-results in a player missing 15 or more games.
+The processed injury list dataset is stored at \textbf{data/processed/physical\_injuries\_2010\_2021.csv}.
+There are \textbf{8,552} entries in this dataset and \textbf{1,711} are major injuries.
 
-Additionally, the Injury List contains when a player was acquired on the injury list
-as well as relinquished. TODO:
+\subsection*{Improving the story}
 
-\subsection*{New Fields}
+In his sophomore year, Bowie had suffered a stress fracture in his left tibia. Even though he gave this 
 
-So now we have X entries where players were acquired on the injury list
-and missed 15 or more games.
-We want to tell a bigger story with these entries by adding some more data 
-around this. 
+So now we have 1,711 examples where a player were acquired on the injury list
+for longer than 34 days. We want to tell a bigger story with these entries by adding some more data
+around this.
 
 We want to answer questions such as: How was the player performing before this injury? How intense
 was their team's schedule? Had they suffered an injury prior to this?
 
+\subsection*{Correlated fields}
 
 
-In his sophomore year, Bowie had suffered a stress fracture in his left tibia. Even though he gave this 
 
 \newpage
 \section*{Exploratory Analysis}
@@ -164,5 +174,9 @@ In his sophomore year, Bowie had suffered a stress fracture in his left tibia. E
 \section*{Model Evaluation}
 
 \section*{Conclusion}
+
+\subsection*{Nice to haves}
+
+Would've been nice to incorperate the intensity of the schedule some more.
 
 \end{document}
