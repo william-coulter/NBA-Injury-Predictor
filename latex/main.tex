@@ -56,13 +56,13 @@ Even though Bowie followed the recommened recovery time, the rest of Bowie's car
 In 10 seasons with the NBA, Bowie only appeared in 511 games.\\
 
 The question is, even though injuries in sport are seen as an unforeseeable tragedy, can a
-machine learning model be used to eliminate some of the unpredictability and quantify 
+machine learning model be used to eliminate some of the unpredictability and quantify
 the likelihood that a player will suffer a major injury in the current season?
 
 \section*{The Goal}
 
 Create a model that assigns a likelihood that a player will \emph{suffer a major injury}
-given their current performance. Suffering a major injury will be defined \injurydef.
+in any given season. Suffering a major injury will be defined \injurydef.
 
 \newpage
 
@@ -72,8 +72,8 @@ given their current performance. Suffering a major injury will be defined \injur
 
 \subsection*{Datasets}
 
-The datasets were scraped from various sources such as 
-\href{https://www.prosportstransactions.com/basketball}{prosporttransactions} and 
+The datasets were scraped from various sources such as
+\href{https://www.prosportstransactions.com/basketball}{prosporttransactions} and
 \href{https://www.basketball-reference.com/}{basketball-refrence}. The scrapers
 were sourced from \textbf{elap733}'s repository found
 \href{https://github.com/elap733/NBA-Injuries-Analysis/tree/master/src/d01_scrapes}{here}.\\
@@ -91,8 +91,8 @@ The data ranges from 2010 to today.
 \subsection*{Cleaning}
 
 For the most part, the data contains pretty clean data with no missing entries
-or gibberish values. The datasets were last scraped in 2019 however, so I had to 
-do some additional scraping to obtain the latest data. Luckily, the scrapers 
+or gibberish values. The datasets were last scraped in 2019 however, so I had to
+do some additional scraping to obtain the latest data. Luckily, the scrapers
 still worked just fine.\\
 
 For cleaning, all that I had to do was append the latest scraped data
@@ -102,13 +102,13 @@ The code used to execute this is stored at \textbf{scripts/clean\_data.py}.
 \section*{Processing Data}
 
 % This section explains the reasoning and steps take to produce the \textbf{data/processed/physical\_injuries.csv}
-% file and what each of the columns mean. The code used to execute this is stored at 
+% file and what each of the columns mean. The code used to execute this is stored at
 % \textbf{scipts/process\_data.py}.
 
 \subsection*{The Injury List}
 
 This section explains the reasoning and steps take to produce the \textbf{data/processed/physical\_injuries\_2010\_2021.csv}
-file and what each of the columns mean. The code used to execute this is stored at 
+file and what each of the columns mean. The code used to execute this is stored at
 \textbf{scipts/process\_injury\_list.py}.\\
 
 The injury list in the NBA isn't quite as the name suggests. Rather than being a list
@@ -122,28 +122,28 @@ for other reasons can be placed on this list. Other reasons include:
     \item \textbf{personal reasons}: 11
 \end{itemize}
 
-In addition, the list includes players who are \emph{relinquished} from their team 
+In addition, the list includes players who are \emph{relinquished} from their team
 (put on the injury list) and players who are \emph{acquired} to their team (removed
-from the injury list). This means there are essentially 2 entries for 
+from the injury list). This means there are essentially 2 entries for
 each individual injury. We want to move the date of this second entry to its own column
-so that for each injury we know the dates that player was put on and removed from the 
+so that for each injury we know the dates that player was put on and removed from the
 injury list.\\
 
 Earlier I defined a "major injury" as \injurydef. I defined it in this way
 by looking at the distribution of days spent on the injury list in our dataset.
 
 \begin{center}
-    \includegraphics[scale=0.6]{day_spent_on_il_distribution.png}    
+    \includegraphics[scale=0.6]{day_spent_on_il_distribution.png}
 \end{center}
 
-The red line shows the 80th percentile of this distribution which is at 
+The red line shows the 80th percentile of this distribution which is at
 \textbf{34} days spent on the injury list
-\footnote{Some injuries were marked as "player out for season" which means they don't have another entry in the 
+\footnote{Some injuries were marked as "player out for season" which means they don't have another entry in the
 dataset showing their return. For this case, the player was marked down as being on the IL for 100 days. These players
 are not included in the histogram however do play a role in this percentile calculation}.
-I selected this to be the boundary between a minor and major. Even though this was done somewhat 
+I selected this to be the boundary between a minor and major. Even though this was done somewhat
 arbitarily (I manually decided to use the 80th percentile), I believe this is a
-reasonable number since it represents the injuries that left a player on the injury 
+reasonable number since it represents the injuries that left a player on the injury
 list for just over a month and represents only 20\% of all NBA injuries since 2010.\\
 
 The processed injury list dataset is stored at \textbf{data/processed/physical\_injuries\_2010\_2021.csv}.
@@ -165,16 +165,55 @@ more data to these injuries. The case of Bowie can inspire us to ask questions s
     \item How intense did the player play?
     \item How intense was their team's schedule?
     \item Have they suffered an injury prior?
-\end{itemize} 
+\end{itemize}
 
-The script \textbf{scripts/derive\_new\_fields.py} attempts to answer some of these questions
-by joining the existing dataset at \textbf{data/cleaned/player\_stats\_2010\_2021.csv}
-with the processed injury list at \textbf{data/processed/physical\_injuries\_2010\_2021.csv}.
+The script \textbf{scripts/derive\_new\_fields.py} attempts to answer some of these questions.\\
 
+The dataset \textbf{data/cleaned/player\_stats\_2010\_2021.csv} contains a general overview of player
+statistics for a given season. We can perform a \emph{left join} on this dataset with the processed
+physical injuries dataset so that each injury is now linked to the player's performance during
+the season that they were injuried.\\
+\newpage
 
+\begin{center}
+    \begin{table}
+    \begin{tabular}{||c c c c c c c c||}
+    \hline
+    Player & Year & Season & Position & Age & Injury Date & Duration & Notes \\ [0.5ex]
+    \hline\hline
+    Malik Allen & 2010 & regular & PF & 32 & 2010-10-28 & 9 & placed on IL \\
+    \hline
+    Malik Allen & 2010 & regular & PF & 32 & 2010-11-10 & 5 & placed on IL \\
+    \hline
+    Malik Allen & 2010 & regular & PF & 32 & 2010-11-20 & 4 & placed on IL \\
+    \hline
+    Malik Allen & 2010 & regular & PF & 32 & 2010-11-30 & 1 & placed on IL \\
+    \hline
+    Malik Allen & 2010 & regular & PF & 32 & 2010-12-23 & 43 & placed on IL with sprained left ankle\\ [1ex]
+    \hline
+   \end{tabular}
+   \caption{\label{tab:multiple-injuries}Dataset showing Malik Allen suffering multiple injuries in the 2010 regular season}
+    \end{table}
+\end{center}
 
+But what about players who were injured multiple times during the same season? In table \ref{tab:multiple-injuries}, we can see
+that Allen suffered a few injuries in the 2010 season. Each of these rows also contain data about 
+Allen's performance for the 2010 season, which are all identical in their values, since it's all for the
+2010 season. Recall that the aim of this model is to predict the likelihood that 
+a player will suffer a major injury in a given season. Feeding Allen's data into a model 
+would confuse the model since it has 4 examples where a player didn't suffer a major injury
+and 1 example where they did, all with the \emph{exact same} stats for the season.\\
 
+We want to group these examples together so that the model doesn't have contradicting data,
+but we also want to keep the information that Allen suffered \emph{minor} injuries
+prior to his major injury.\\
 
+Let's create a new field \textbf{Recent Minor Injury Count} which for each
+season for a given player, counts the number of minor injuries they received in the 
+past 24 months. A \emph{minor injury} will be defined as an injury that wasn't a major injury.
+
+Let's also create another field \textbf{Previous Major Injury Count} which counts the 
+number of \emph{major injuries} that a player has suffered strictly prior to that season.
 
 \newpage
 \section*{Exploratory Analysis}
@@ -191,5 +230,9 @@ with the processed injury list at \textbf{data/processed/physical\_injuries\_201
 \subsection*{Nice to haves}
 
 Would've been nice to incorperate the intensity of the schedule some more.
+
+\section*{Appendix}
+\label{appendix:}
+
 
 \end{document}
