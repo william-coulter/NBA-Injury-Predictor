@@ -4,9 +4,18 @@ An ML model that attempts to quantify the likelihood that a player in the NBA wi
 
 ## Dependencies
 
-TODO
+- `pipenv`
+- `python3.9+`
 
 ## Commands
+
+See `Makefile` for commands.
+
+To run a script in the `./scripts` directory:
+
+`make run SCRIPT=SCRIPT_NAME`
+
+For example, to run `model_evaluation.py`: `make run SCRIPT=model_evaluation.py`
 
 ## Credits
 
