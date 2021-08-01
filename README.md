@@ -2,6 +2,8 @@
 
 An ML model that attempts to quantify the likelihood that a player in the NBA will suffer an injury
 
+See `latex/main.pdf` for report.
+
 ## Dependencies
 
 - `pipenv`
