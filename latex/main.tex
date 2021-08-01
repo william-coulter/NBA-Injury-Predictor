@@ -197,10 +197,10 @@ the season that they were injuried.\\
 \end{center}
 
 But what about players who were injured multiple times during the same season? In table \ref{tab:multiple-injuries}, we can see
-that Allen suffered a few injuries in the 2010 season. Each of these rows also contain data about 
+that Allen suffered a few injuries in the 2010 season. Each of these rows also contain data about
 Allen's performance for the 2010 season, which are all identical in their values, since it's all for the
-2010 season. Recall that the aim of this model is to predict the likelihood that 
-a player will suffer a major injury in a given season. Feeding Allen's data into a model 
+2010 season. Recall that the aim of this model is to predict the likelihood that
+a player will suffer a major injury in a given season. Feeding Allen's data into a model
 would confuse the model since it has 4 examples where a player didn't suffer a major injury
 and 1 example where they did, all with the \emph{exact same} stats for the season.\\
 
@@ -209,31 +209,59 @@ but we also want to keep the information that Allen suffered \emph{minor} injuri
 prior to his major injury.\\
 
 Let's create a new field \textbf{Recent Minor Injury Count} which for each
-season for a given player, counts the number of minor injuries they received in that season. 
+season for a given player, counts the number of minor injuries they received in that season.
 A \emph{minor injury} will be defined as an injury that wasn't a major injury.
 
-Let's also create another field \textbf{Previous Major Injury Count} which counts the 
+Let's also create another field \textbf{Previous Major Injury Count} which counts the
 number of \emph{major injuries} that a player has suffered strictly prior to that season.
 The new dataset is created at \textbf{data/processed/aggregated.csv}.
 
 \subsection*{Tokenising}
 
-Fields such as the player's position and whether the season is post season 
-or regular are string values. We want to encode these to a numerical value and 
-store their encoding somewhere.
+Fields such as the player's position and whether the season is post season
+or regular are string values. We want to encode these to a numerical value and
+store their encoding somewhere.\\
 
 The script \textbf{tokenize\_data.py} performs these operations and stores the
 new dataset at \textbf{data/processed/tokenized.csv}.
 
-\subsection*{Normalising}
+\subsection*{Normalising and Standardising}
 
-\subsection*{Correlated fields}
+This section explains the steps in \textbf{normalise.py} which is used to
+create the dataset at \textbf{date/processed/nomarlised.csv}.
+
+Some players play more minutes per game than others. Because of this, some of fields
+such as \emph{FGA} (Field Goal Attempts per game) will be greatly skewed by the
+average amount of minutes a player spends in a game. As such, the first step
+I have taken to normalise is make all of "per game" stats a ratio with
+the average minutes played
+\footnote{Note that all normalising and standardising after this point is done \emph{after} training and testing data has been established}.\\
+
+Since the data has a lot of continuous values, it is a good idea to nomralise
+these between 0 and 1. I don't want fields such as the age of a player to be weighted significantly
+higher than a player's average offensive rebounds per game, just because the value of a player's
+age is always much larger.\\
+
+Also, I will assess various models and I do not know the distribution of the dataset
+across all of its values. As such, standardising is a good idea.
+
+\subsection*{Data Selection}
+
+I now have a dataset with a lot of meaningful values - almost too many. In the script,
+\textbf{select\_data.py} I clean out datapoints that I think will mislead the model (for example, the
+player's name) or are correlated and such, provide no further information (for example, Field Goals per game with Field
+Goal Attempts per game).
+This results in a final processed dataset at \textbf{data/processed/final.csv} which contains the
+data that I will be using to train various models on.\\
+
+An explanation on all of the columns contained in this dataset and what they each
+mean can be found in appendix \ref{appendix:final-dataset}.
 
 \newpage
 \section*{Exploratory Analysis}
 
-I've been doing a bit of exploring of the data previously to 
-make decisions about deriving new fields for processing. 
+I've been doing a bit of exploring of the data previously to
+make decisions about deriving new fields for processing.
 This section will focus on using the final "processed" dataset
 and looking at what we have.
 
@@ -249,7 +277,14 @@ Would've been nice to incorperate the intensity of the schedule some more.
 Do some NLP analysis on the Notes of the injury.
 
 \section*{Appendix}
-\label{appendix:}
+\label{appendix}
 
+\subsection*{Final Dataset}
+\label{appendix:final-dataset}
+
+List of all columns:
+\begin{itemize}
+    \item \textbf{Season}: whether the row is from regular (1) or post (0) season
+\end{itemize}
 
 \end{document}
