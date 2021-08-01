@@ -101,10 +101,6 @@ The code used to execute this is stored at \textbf{scripts/clean\_data.py}.
 
 \section*{Processing Data}
 
-% This section explains the reasoning and steps take to produce the \textbf{data/processed/physical\_injuries.csv}
-% file and what each of the columns mean. The code used to execute this is stored at
-% \textbf{scipts/process\_data.py}.
-
 \subsection*{The Injury List}
 
 This section explains the reasoning and steps take to produce the \textbf{data/processed/physical\_injuries\_2010\_2021.csv}
@@ -255,17 +251,25 @@ This results in a final processed dataset at \textbf{data/processed/final.csv} w
 data that I will be using to train various models on.\\
 
 An explanation on all of the columns contained in this dataset and what they each
-mean can be found in appendix \ref{appendix:final-dataset}.
+mean can be found in appendix \ref{appendix:finaldataset}.
 
-\newpage
 \section*{Exploratory Analysis}
 
-I've been doing a bit of exploring of the data previously to
-make decisions about deriving new fields for processing.
-This section will focus on using the final "processed" dataset
-and looking at what we have.
+In previous sections of this report I have explored the raw data and 
+used my findings to derive new fields and select the final data.
+This section will focus on exploring the final dataset to reason about which
+models can be used. The script \textbf{exploratory\_analysis.py} was
+used to produce this information.\\
+
+There are \textbf{7,820} examples in the dataset with \textbf{22} features. Of which,
+\textbf{1,094} are examples with major injuries.\\ Looking at the correlations between
+features of the final dataset, we can see that there are no major 
+correlations between our dependent variable (Major Injury) and the 
+rest of the dataset.
 
 \section*{Model Selection}
+
+
 
 \section*{Model Evaluation}
 
@@ -276,13 +280,14 @@ and looking at what we have.
 Would've been nice to incorperate the intensity of the schedule some more.
 Do some NLP analysis on the Notes of the injury.
 
+\newpage
 \section*{Appendix}
 \label{appendix:start}
 
 
 \subsection*{Final Dataset}
 
-\label{appendix:final-dataset}
+\label{appendix:finaldataset}
 Each row represents a player's statistics during a given season. 
 Each row has the following columns:
 \begin{itemize}
@@ -309,5 +314,14 @@ Each row has the following columns:
     \item \textbf{Previous Major Injury Count}: the number of major injuries suffered by the player prior to that season
     \item \textbf{Major Injury}: whether the player suffered a major injury (1) during that season or not (2)
 \end{itemize}
+
+\newpage
+\subsection*{Final Dataset Correlations}
+\label{appendix:correlations}
+\begin{center}
+    \includegraphics[scale=0.35]{correlations_post.png}
+    % \caption{\label{fig:correlations-post}Correlation between each of the features}
+\end{center}
+
 
 \end{document}
