@@ -209,17 +209,33 @@ but we also want to keep the information that Allen suffered \emph{minor} injuri
 prior to his major injury.\\
 
 Let's create a new field \textbf{Recent Minor Injury Count} which for each
-season for a given player, counts the number of minor injuries they received in the 
-past 24 months. A \emph{minor injury} will be defined as an injury that wasn't a major injury.
+season for a given player, counts the number of minor injuries they received in that season. 
+A \emph{minor injury} will be defined as an injury that wasn't a major injury.
 
 Let's also create another field \textbf{Previous Major Injury Count} which counts the 
 number of \emph{major injuries} that a player has suffered strictly prior to that season.
+The new dataset is created at \textbf{data/processed/aggregated.csv}.
+
+\subsection*{Tokenising}
+
+Fields such as the player's position and whether the season is post season 
+or regular are string values. We want to encode these to a numerical value and 
+store their encoding somewhere.
+
+The script \textbf{tokenize\_data.py} performs these operations and stores the
+new dataset at \textbf{data/processed/tokenized.csv}.
+
+\subsection*{Normalising}
+
+\subsection*{Correlated fields}
 
 \newpage
 \section*{Exploratory Analysis}
 
-\subsection*{Correlated fields}
-
+I've been doing a bit of exploring of the data previously to 
+make decisions about deriving new fields for processing. 
+This section will focus on using the final "processed" dataset
+and looking at what we have.
 
 \section*{Model Selection}
 
@@ -230,6 +246,7 @@ number of \emph{major injuries} that a player has suffered strictly prior to tha
 \subsection*{Nice to haves}
 
 Would've been nice to incorperate the intensity of the schedule some more.
+Do some NLP analysis on the Notes of the injury.
 
 \section*{Appendix}
 \label{appendix:}
