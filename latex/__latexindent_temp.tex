@@ -251,7 +251,7 @@ This results in a final processed dataset at \textbf{data/processed/final.csv} w
 data that I will be using to train various models on.\\
 
 An explanation on all of the columns contained in this dataset and what they each
-mean can be found in appendix \ref{appendix:finaldataset}.
+mean can be found in appendix \ref{appendix:start}.
 
 \section*{Exploratory Analysis}
 
@@ -262,16 +262,63 @@ models can be used. The script \textbf{exploratory\_analysis.py} was
 used to produce this information.\\
 
 There are \textbf{7,820} examples in the dataset with \textbf{22} features. Of which,
-\textbf{1,094} are examples with major injuries.\\ Looking at the correlations between
-features of the final dataset, we can see that there are no major 
+\textbf{1,094} are examples with major injuries. Looking at the correlations between
+features of the final dataset \ref{appendix:correlations}, we can see that there are no major 
 correlations between our dependent variable (Major Injury) and the 
 rest of the dataset.
 
 \section*{Model Selection}
 
+The \textbf{model\_selection.py} script contains the code that 
+was used to overview a selection of models. The models were overviewed by 
+training against 80\% of the dataset and then tested against the remaining
+20\%. An \emph{accuracy score} and \emph{log\-loss} was calculated for each 
+of the models to yield the following results:
+\begin{itemize}
+    \item Logistic (L1): 0.8566176470588235 accuracy and 7.685170414877148 log-loss
+    \item Logistic (L2 Saga Solver): 0.8562979539641944 accuracy and 7.7403808623708885 log-loss
+    \item Linear SVC (linear): 0.8610933503836317 accuracy and 4.79766571086595 log-loss
+    \item Linear SVC (gamma): 0.8607736572890026 accuracy and 4.79766571086595 log-loss
+    \item Naive Bayes (Multinomial): 0.8610933503836317 accuracy and 4.78662697006488 log-loss
+    \item Random Forest: 0.8639705882352942 accuracy and 4.698297616097271 log-loss
+\end{itemize}
 
+Immediately, the accuracies (ratio of correct predictions to incorrect) are all around 85\%
+which seems promising. Considering, however, that that approximately 86\% of the  dataset is filled 
+with examples of players who weren't majorly injured during the season, you could expect a dumb model that  
+guesses "no major injury" for every example to have similar accuracy. A confusion matrix
+tells a better story about each model.\\
+
+In these confusion matricies, the top left and bottom right squares are the number of correct predictions
+broken down by classification. The top right is the number of false positives and the  
+bottom left is the number of false negatives.\\
+
+\begin{center}
+    \includegraphics[scale=0.6]{confusion_matrix_Logistic (L1).png}
+\end{center}
+
+Looking at the confusion matrix for the Logistic (L1) model, we can see 
+that the model missed 830 major injury predictions and of the 601
+major injury predictions that it made, only 39 were correct.
+
+\begin{center}
+    \includegraphics[scale=0.6]{confusion_matrix_Random Forest.png}
+\end{center}
+
+Similarly with the Random Forest, the model missed 805 major injuries
+however it was much more accurate when it did make a prediction.\\
+
+The SVM models didn't make any predictions for a major injury and
+the Bayesian models had similar results to the Random Forest, except 
+it was more reserved with its positive predictions.
+
+From this overview, the Random Forest model performs the best, not only in having
+less incorrect prediction (albeit marginally) to the other models, but 
+there is also a higher level of accuracy when it does predict a major injury.
 
 \section*{Model Evaluation}
+
+
 
 \section*{Conclusion}
 
@@ -281,14 +328,12 @@ Would've been nice to incorperate the intensity of the schedule some more.
 Do some NLP analysis on the Notes of the injury.
 
 \newpage
-\section*{Appendix}
-\label{appendix:start}
-
+\label{appendix:start}\section*{Appendix}
 
 \subsection*{Final Dataset}
 
-\label{appendix:finaldataset}
-Each row represents a player's statistics during a given season. 
+
+\label{appendix:finaldataset}Each row represents a player's statistics during a given season. 
 Each row has the following columns:
 \begin{itemize}
     \item \textbf{Season}: whether the statistics are from regular (1) or post (0) season
@@ -316,12 +361,11 @@ Each row has the following columns:
 \end{itemize}
 
 \newpage
-\subsection*{Final Dataset Correlations}
-\label{appendix:correlations}
-\begin{center}
-    \includegraphics[scale=0.35]{correlations_post.png}
-    % \caption{\label{fig:correlations-post}Correlation between each of the features}
-\end{center}
-
+\begin{figure}
+    \caption{\label{appendix:correlations}Correlation between each of the features}
+    \centering
+    \includegraphics[width=1.1\textwidth]{correlations_post.png}
+\end{figure}
+\newpage
 
 \end{document}

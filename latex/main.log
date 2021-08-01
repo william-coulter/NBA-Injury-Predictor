@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.10)  1 AUG 2021 18:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.10)  1 AUG 2021 23:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1268,34 +1268,60 @@ Underfull \hbox (badness 10000) in paragraph at lines 258--263
 
  []
 
-[5] [6]
-<../outputs//correlations_post.png, id=66, 1373.13pt x 1084.05pt>
-File: ../outputs//correlations_post.png Graphic file (type png)
-<use ../outputs//correlations_post.png>
-Package pdftex.def Info: ../outputs//correlations_post.png  used on input line 322.
-(pdftex.def)             Requested size: 480.6027pt x 379.42319pt.
 
-Overfull \hbox (25.3586pt too wide) in paragraph at lines 322--324
- [] 
+Underfull \hbox (badness 10000) in paragraph at lines 286--291
+
  []
 
-[7 </Users/williamcoulter/Documents/COMP9417/project/latex/../outputs//correlations_post.png>] (/Users/williamcoulter/Documents/COMP9417/project/latex/main.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--295
+
+ []
+
+<../outputs//confusion_matrix_Logistic (L1).png, id=51, 722.7pt x 722.7pt>
+File: ../outputs//confusion_matrix_Logistic (L1).png Graphic file (type png)
+<use ../outputs//confusion_matrix_Logistic (L1).png>
+Package pdftex.def Info: ../outputs//confusion_matrix_Logistic (L1).png  used on input line 297.
+(pdftex.def)             Requested size: 433.62334pt x 433.62334pt.
+[5]
+<../outputs//confusion_matrix_Random Forest.png, id=60, 722.7pt x 722.7pt>
+File: ../outputs//confusion_matrix_Random Forest.png Graphic file (type png)
+<use ../outputs//confusion_matrix_Random Forest.png>
+Package pdftex.def Info: ../outputs//confusion_matrix_Random Forest.png  used on input line 305.
+(pdftex.def)             Requested size: 433.62334pt x 433.62334pt.
+ [6 </Users/williamcoulter/Documents/COMP9417/project/latex/../outputs//confusion_matrix_Logistic (L1).png>]
+Underfull \hbox (badness 10000) in paragraph at lines 308--310
+
+ []
+
+[7 </Users/williamcoulter/Documents/COMP9417/project/latex/../outputs//confusion_matrix_Random Forest.png>] [8]
+<../outputs//correlations_post.png, id=81, 1373.13pt x 1084.05pt>
+File: ../outputs//correlations_post.png Graphic file (type png)
+<use ../outputs//correlations_post.png>
+Package pdftex.def Info: ../outputs//correlations_post.png  used on input line 367.
+(pdftex.def)             Requested size: 500.77129pt x 395.33586pt.
+
+Overfull \hbox (45.52718pt too wide) in paragraph at lines 367--368
+ [][] 
+ []
+
+[9 </Users/williamcoulter/Documents/COMP9417/project/latex/../outputs//correlations_post.png>] (/Users/williamcoulter/Documents/COMP9417/project/latex/main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 25101 strings out of 478994
- 441027 string characters out of 5858184
- 752268 words of memory out of 5000000
- 42060 multiletter control sequences out of 15000+600000
+ 25115 strings out of 478994
+ 441606 string characters out of 5858184
+ 752285 words of memory out of 5000000
+ 42070 multiletter control sequences out of 15000+600000
  490378 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 138i,8n,141p,596b,418s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 138i,8n,141p,596b,420s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/xcharter/xch1_co4ru4.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/xcharter/xch_rydp4l.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/xcharter/XCharter-Bold.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/xcharter/XCharter-Italic.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/xcharter/XCharter-Roman.pfb>
-Output written on /Users/williamcoulter/Documents/COMP9417/project/latex/main.pdf (7 pages, 286261 bytes).
+Output written on /Users/williamcoulter/Documents/COMP9417/project/latex/main.pdf (9 pages, 342119 bytes).
 PDF statistics:
- 96 PDF objects out of 1000 (max. 8388607)
- 79 compressed objects within 1 object stream
- 30 named destinations out of 1000 (max. 500000)
- 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 110 PDF objects out of 1000 (max. 8388607)
+ 87 compressed objects within 1 object stream
+ 32 named destinations out of 1000 (max. 500000)
+ 33 words of extra memory for PDF output out of 10000 (max. 10000000)
 

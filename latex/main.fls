@@ -1210,6 +1210,16 @@ INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/xcharter/XCharter-Roma
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/xcharter/XCharter-Italic-tlf-t1.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/public/xcharter/XCharter-Italic-tlf-t1.vf
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/xcharter/XCharter-Italic-tlf-t1--base.tfm
+INPUT /Users/williamcoulter/Documents/COMP9417/project/latex/../outputs//confusion_matrix_Logistic (L1).png
+INPUT /Users/williamcoulter/Documents/COMP9417/project/latex/../outputs//confusion_matrix_Logistic (L1).png
+INPUT /Users/williamcoulter/Documents/COMP9417/project/latex/../outputs//confusion_matrix_Logistic (L1).png
+INPUT /Users/williamcoulter/Documents/COMP9417/project/latex/../outputs//confusion_matrix_Logistic (L1).png
+INPUT /Users/williamcoulter/Documents/COMP9417/project/latex/../outputs//confusion_matrix_Logistic (L1).png
+INPUT /Users/williamcoulter/Documents/COMP9417/project/latex/../outputs//confusion_matrix_Random Forest.png
+INPUT /Users/williamcoulter/Documents/COMP9417/project/latex/../outputs//confusion_matrix_Random Forest.png
+INPUT /Users/williamcoulter/Documents/COMP9417/project/latex/../outputs//confusion_matrix_Random Forest.png
+INPUT /Users/williamcoulter/Documents/COMP9417/project/latex/../outputs//confusion_matrix_Random Forest.png
+INPUT /Users/williamcoulter/Documents/COMP9417/project/latex/../outputs//confusion_matrix_Random Forest.png
 INPUT /Users/williamcoulter/Documents/COMP9417/project/latex/../outputs//correlations_post.png
 INPUT /Users/williamcoulter/Documents/COMP9417/project/latex/../outputs//correlations_post.png
 INPUT /Users/williamcoulter/Documents/COMP9417/project/latex/../outputs//correlations_post.png
