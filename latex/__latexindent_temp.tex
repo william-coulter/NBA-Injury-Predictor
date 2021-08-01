@@ -277,14 +277,37 @@ Would've been nice to incorperate the intensity of the schedule some more.
 Do some NLP analysis on the Notes of the injury.
 
 \section*{Appendix}
-\label{appendix}
+\label{appendix:start}
+
 
 \subsection*{Final Dataset}
-\label{appendix:final-dataset}
 
-List of all columns:
+\label{appendix:final-dataset}
+Each row represents a player's statistics during a given season. 
+Each row has the following columns:
 \begin{itemize}
-    \item \textbf{Season}: whether the row is from regular (1) or post (0) season
+    \item \textbf{Season}: whether the statistics are from regular (1) or post (0) season
+    \item \textbf{Pos}: the position of the player
+    \item \textbf{Age}: the age of the player
+    \item \textbf{G}: the number of games played
+    \item \textbf{GS}: the number of games started
+    \item \textbf{MP}: the average number of minutes played per game
+    \item \textbf{3PA}: the average number of 3-point attempts per game per minute
+    \item \textbf{3P\%}: the percentage of 3-point attemps that were successful
+    \item \textbf{2PA}: the number of 2-point attempts per game per minute
+    \item \textbf{2P\%}: the percentage of 2-point attemps that were successful
+    \item \textbf{FTA}: the number of Free Throw attempts per game per minute
+    \item \textbf{FT\%}: the percentage of Free Throw attempts that were successful
+    \item \textbf{ORB}: the number of Offensive Rebounds per game per minute
+    \item \textbf{DRB}: the number of Defensive Rebounds per game per minute
+    \item \textbf{AST}: the number of assists per game per minute
+    \item \textbf{STL}: the number of steals per game per minute
+    \item \textbf{BLK}: the number of blocks per game per minute
+    \item \textbf{TOV}: the number of turn-overs conceeded per game per minute
+    \item \textbf{PF}: the number of personal fouls against the player per game per minute
+    \item \textbf{Minor Injury Count}: the number of minor injuries suffered by the player during that season
+    \item \textbf{Previous Major Injury Count}: the number of major injuries suffered by the player prior to that season
+    \item \textbf{Major Injury}: whether the player suffered a major injury (1) during that season or not (2)
 \end{itemize}
 
 \end{document}
