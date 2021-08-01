@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.10)  1 AUG 2021 23:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.10)  1 AUG 2021 23:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1137,191 +1137,201 @@ Underfull \hbox (badness 10000) in paragraph at lines 51--57
 
  []
 
+LaTeX Font Info:    Font shape `T1/XCharter-TLF/b/n' will be
+(Font)              scaled to size 10.0pt on input line 70.
 [1
 
 {/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 73.
-LaTeX Font Info:    Font shape `T1/XCharter-TLF/b/n' will be
-(Font)              scaled to size 10.0pt on input line 78.
+(Font)              scaled to size 12.0pt on input line 79.
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--80
+Underfull \hbox (badness 10000) in paragraph at lines 81--86
 
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+XCharter-TLF on input line 83.
+LaTeX Font Info:    Trying to load font information for TS1+XCharter-TLF on input line 89.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/xcharter/TS1XCharter-TLF.fd
 File: TS1XCharter-TLF.fd 2020/05/25 (msharpe) Font definitions for TS1/XCharter-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/XCharter-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 83.
+(Font)              scaled to size 10.0pt on input line 89.
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--97
+Underfull \hbox (badness 10000) in paragraph at lines 99--103
 
  []
 
 
-Overfull \hbox (47.64815pt too wide) in paragraph at lines 106--109
+Overfull \hbox (47.64815pt too wide) in paragraph at lines 112--115
 \T1/XCharter-TLF/m/n/10 This sec-tion ex-plains the rea-son-ing and steps take to pro-duce the \T1/XCharter-TLF/b/n/10 data/pro-cessed/-phys-i-cal_injuries_2010_2021.csv
  []
 
 
-Overfull \hbox (25.9173pt too wide) in paragraph at lines 106--109
+Overfull \hbox (25.9173pt too wide) in paragraph at lines 112--115
 \T1/XCharter-TLF/m/n/10 file and what each of the columns mean. The code used to ex-e-cute this is stored at \T1/XCharter-TLF/b/n/10 scipt-s/pro-cess_injury_list.py\T1/XCharter-TLF/m/n/10 . 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--109
+Underfull \hbox (badness 10000) in paragraph at lines 112--115
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 121--127
+Underfull \hbox (badness 10000) in paragraph at lines 127--133
 
  []
 
-<../outputs//day_spent_on_il_distribution.png, id=20, 462.528pt x 346.896pt>
+<../outputs//day_spent_on_il_distribution.png, id=22, 462.528pt x 346.896pt>
 File: ../outputs//day_spent_on_il_distribution.png Graphic file (type png)
 <use ../outputs//day_spent_on_il_distribution.png>
-Package pdftex.def Info: ../outputs//day_spent_on_il_distribution.png  used on input line 132.
+Package pdftex.def Info: ../outputs//day_spent_on_il_distribution.png  used on input line 138.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
 [2]
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 137.
+(Font)              scaled to size 7.0pt on input line 143.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 139.
+(Font)              scaled to size 8.0pt on input line 145.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 139.
+(Font)              scaled to size 6.0pt on input line 145.
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--144
+Underfull \hbox (badness 10000) in paragraph at lines 141--150
 
  []
 
 
-Overfull \hbox (4.41324pt too wide) in paragraph at lines 145--147
+Overfull \hbox (4.41324pt too wide) in paragraph at lines 151--153
 []\T1/XCharter-TLF/m/n/10 The pro-cessed in-jury list dataset is stored at \T1/XCharter-TLF/b/n/10 data/pro-cessed/-phys-i-cal_injuries_2010_2021.csv\T1/XCharter-TLF/m/n/10 . There
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--153
+Underfull \hbox (badness 10000) in paragraph at lines 156--159
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 166--167
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 168--172
+Underfull \hbox (badness 10000) in paragraph at lines 174--178
 
  []
 
 [3 </Users/williamcoulter/Documents/COMP9417/project/latex/../outputs//day_spent_on_il_distribution.png>]
-Overfull \hbox (47.70534pt too wide) in paragraph at lines 176--191
+Overfull \hbox (47.70534pt too wide) in paragraph at lines 182--197
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 195--202
+Underfull \hbox (badness 10000) in paragraph at lines 201--208
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 203--206
+Underfull \hbox (badness 10000) in paragraph at lines 209--212
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--220
+Underfull \hbox (badness 10000) in paragraph at lines 223--226
 
  []
 
 
-Overfull \hbox (2.44115pt too wide) in paragraph at lines 221--223
+Overfull \hbox (2.44115pt too wide) in paragraph at lines 227--229
 []\T1/XCharter-TLF/m/n/10 The script \T1/XCharter-TLF/b/n/10 to-k-enize_data.py \T1/XCharter-TLF/m/n/10 per-forms these op-er-a-tions and stores the new dataset at \T1/XCharter-TLF/b/n/10 data/pro-cessed/-
  []
 
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/it' will be
-(Font)              scaled to size 8.0pt on input line 234.
+(Font)              scaled to size 8.0pt on input line 240.
 
-Underfull \hbox (badness 10000) in paragraph at lines 229--235
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 236--240
+Underfull \hbox (badness 10000) in paragraph at lines 235--241
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 246--252
+Underfull \hbox (badness 10000) in paragraph at lines 242--246
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 252--258
 
  []
 
 [4]
 
-Package hyperref Warning: Suppressing empty link on input line 254.
+Package hyperref Warning: Suppressing empty link on input line 260.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--263
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 286--291
+Underfull \hbox (badness 10000) in paragraph at lines 264--269
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 292--295
+Underfull \hbox (badness 10000) in paragraph at lines 292--297
 
  []
 
-<../outputs//confusion_matrix_Logistic (L1).png, id=51, 722.7pt x 722.7pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 298--301
+
+ []
+
+<../outputs//confusion_matrix_Logistic (L1).png, id=53, 722.7pt x 722.7pt>
 File: ../outputs//confusion_matrix_Logistic (L1).png Graphic file (type png)
 <use ../outputs//confusion_matrix_Logistic (L1).png>
-Package pdftex.def Info: ../outputs//confusion_matrix_Logistic (L1).png  used on input line 297.
+Package pdftex.def Info: ../outputs//confusion_matrix_Logistic (L1).png  used on input line 303.
 (pdftex.def)             Requested size: 433.62334pt x 433.62334pt.
 [5]
-<../outputs//confusion_matrix_Random Forest.png, id=60, 722.7pt x 722.7pt>
+<../outputs//confusion_matrix_Random Forest.png, id=62, 722.7pt x 722.7pt>
 File: ../outputs//confusion_matrix_Random Forest.png Graphic file (type png)
 <use ../outputs//confusion_matrix_Random Forest.png>
-Package pdftex.def Info: ../outputs//confusion_matrix_Random Forest.png  used on input line 305.
+Package pdftex.def Info: ../outputs//confusion_matrix_Random Forest.png  used on input line 311.
 (pdftex.def)             Requested size: 433.62334pt x 433.62334pt.
  [6 </Users/williamcoulter/Documents/COMP9417/project/latex/../outputs//confusion_matrix_Logistic (L1).png>]
-Underfull \hbox (badness 10000) in paragraph at lines 308--310
+Underfull \hbox (badness 10000) in paragraph at lines 314--316
 
  []
 
-[7 </Users/williamcoulter/Documents/COMP9417/project/latex/../outputs//confusion_matrix_Random Forest.png>] [8]
-<../outputs//correlations_post.png, id=81, 1373.13pt x 1084.05pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 327--328
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--341
+
+ []
+
+[7 </Users/williamcoulter/Documents/COMP9417/project/latex/../outputs//confusion_matrix_Random Forest.png>] [8] [9]
+<../outputs//correlations_post.png, id=87, 1373.13pt x 1084.05pt>
 File: ../outputs//correlations_post.png Graphic file (type png)
 <use ../outputs//correlations_post.png>
-Package pdftex.def Info: ../outputs//correlations_post.png  used on input line 367.
+Package pdftex.def Info: ../outputs//correlations_post.png  used on input line 395.
 (pdftex.def)             Requested size: 500.77129pt x 395.33586pt.
 
-Overfull \hbox (45.52718pt too wide) in paragraph at lines 367--368
+Overfull \hbox (45.52718pt too wide) in paragraph at lines 395--396
  [][] 
  []
 
-[9 </Users/williamcoulter/Documents/COMP9417/project/latex/../outputs//correlations_post.png>] (/Users/williamcoulter/Documents/COMP9417/project/latex/main.aux)
+[10 </Users/williamcoulter/Documents/COMP9417/project/latex/../outputs//correlations_post.png>] (/Users/williamcoulter/Documents/COMP9417/project/latex/main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 25115 strings out of 478994
- 441606 string characters out of 5858184
+ 25117 strings out of 478994
+ 441624 string characters out of 5858184
  752285 words of memory out of 5000000
  42070 multiletter control sequences out of 15000+600000
  490378 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  138i,8n,141p,596b,420s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/xcharter/xch1_co4ru4.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/xcharter/xch_rydp4l.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/xcharter/XCharter-Bold.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/xcharter/XCharter-Italic.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/xcharter/XCharter-Roman.pfb>
-Output written on /Users/williamcoulter/Documents/COMP9417/project/latex/main.pdf (9 pages, 342119 bytes).
+Output written on /Users/williamcoulter/Documents/COMP9417/project/latex/main.pdf (10 pages, 346434 bytes).
 PDF statistics:
- 110 PDF objects out of 1000 (max. 8388607)
- 87 compressed objects within 1 object stream
- 32 named destinations out of 1000 (max. 500000)
+ 116 PDF objects out of 1000 (max. 8388607)
+ 92 compressed objects within 1 object stream
+ 34 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 

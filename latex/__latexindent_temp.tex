@@ -64,6 +64,12 @@ the likelihood that a player will suffer a major injury in the current season?
 Create a model that assigns a likelihood that a player will \emph{suffer a major injury}
 in any given season. Suffering a major injury will be defined \injurydef.
 
+\section*{Similar Works}
+
+Looking online, the only analysis I can see that has been completed on NBA  player injuries
+is \textbf{elap733}'s repository found \href{https://github.com/elap733/NBA-Injuries-Analysis/tree/master/src/d01_scrapes}{here}. 
+This has a thorough breakdown of all the datasets however does not apply any machine learning.
+
 \newpage
 
 % TODO: A background on similar projects / how this project is unique?
@@ -298,14 +304,14 @@ bottom left is the number of false negatives.\\
 \end{center}
 
 Looking at the confusion matrix for the Logistic (L1) model, we can see 
-that the model missed 830 major injury predictions and of the 601
-major injury predictions that it made, only 39 were correct.
+that the model missed 361 major injury predictions and of the 86
+major injury predictions that it made, only 7 were correct.
 
 \begin{center}
     \includegraphics[scale=0.6]{confusion_matrix_Random Forest.png}
 \end{center}
 
-Similarly with the Random Forest, the model missed 805 major injuries
+Similarly with the Random Forest, the model missed 342 major injuries
 however it was much more accurate when it did make a prediction.\\
 
 The SVM models didn't make any predictions for a major injury and
@@ -318,20 +324,42 @@ there is also a higher level of accuracy when it does predict a major injury.
 
 \section*{Model Evaluation}
 
+Now that we have chosen the Random Forest model, let's apply it to the 2020 MVP of the league's data -  Giannis Antetokounmpo.\\
 
+\begin{itemize}
+    \item \textbf{predicted probability of injury for Antetokounmpo}: 17.802\%
+    \item \textbf{average probability of injury}: 13.990\%
+\end{itemize}
+
+This model predicts Antetokounmpo is 17.802\% which is approximately 3.8\% higher than the average player in the league.
 
 \section*{Conclusion}
 
-\subsection*{Nice to haves}
+Overall, none of the models could predict with reasonable accuracy whether a player would receive a injury in any given season. 
+The most accurate model was the Random Forest and it only predicted 7\% of the 
+major injuries in the test set correctly.\\
 
-Would've been nice to incorperate the intensity of the schedule some more.
-Do some NLP analysis on the Notes of the injury.
+In terms of achieving the goal of this project, these are not the results
+I was hoping for. However, given the unpredictable nature of injuries, these  
+results were expected.
+
+\subsection*{Extensions}
+
+I honestly believe that with more data, you could improve on these models. More data to 
+consider could include:
+\begin{itemize}
+    \item Breaking down the data on a per-game basis rather than per season.
+    \item Incorperate the player's schedule. Sometimes teams play for multiple days in a row.
+    \item I used a general breakdown of player data, there are much more granular statistics such as distance ran, work rate etc.
+\end{itemize}
+
+Another possible extension is applying some NLP to the "Notes" field of the injury list
+dataset. This often contains information about where on the body the injury occured.
 
 \newpage
 \label{appendix:start}\section*{Appendix}
 
 \subsection*{Final Dataset}
-
 
 \label{appendix:finaldataset}Each row represents a player's statistics during a given season. 
 Each row has the following columns:

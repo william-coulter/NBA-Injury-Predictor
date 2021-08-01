@@ -58,7 +58,7 @@ def normalise_data_for_logistic(df):
 
 ### SCRIPT START ###
 
-print("\n\nEvaluating models...\n\n")
+print("\n\Selecting models...\n\n")
 
 # Hyperparameters
 C = 5
@@ -72,7 +72,7 @@ classifiers = { "Logistic (L1)": LogisticRegression(penalty='l1', solver='liblin
     , "Linear SVC (linear)": SVC(kernel='linear', C=C, probability=True, random_state=0)
     , "Linear SVC (gamma)": SVC(gamma=5, C=C)
     , "Naive Bayes (Multinomial)": MultinomialNB()
-    , "Random Forest": RandomForestClassifier(max_depth=10),
+    , "Random Forest": RandomForestClassifier(max_depth=10, random_state=0),
 }
 
 data = import_csv(FINAL_DATA_PATH)
@@ -83,7 +83,7 @@ for i, (name, model) in enumerate(classifiers.items()):
 
     # Split data
     Xtrain, Xtest, Ytrain, Ytest = train_test_split(
-        X, Y, test_size=0.8, random_state=0
+        X, Y, test_size=0.33, random_state=0
     )
 
     # Normalise and standardise
